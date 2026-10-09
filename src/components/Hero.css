@@ -1,0 +1,136 @@
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 32px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: clamp(40px, 6vw, 80px) var(--gutter) clamp(64px, 9vw, 120px);
+}
+
+.hero-texto {
+  position: relative;
+  z-index: 1;
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+}
+
+.hero-carimbo {
+  position: absolute;
+  top: -18px;
+  left: min(52%, 6.6em);
+  z-index: 2;
+  font-size: clamp(11px, 1.3vw, 15px);
+}
+
+.hero-titulo {
+  display: flex;
+  flex-direction: column;
+  color: var(--verde);
+  font: min(18cqi, 128px) / 0.86 var(--f-titulo);
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+
+.hero-titulo-2 {
+  margin-left: 0.7em;
+  color: var(--preto);
+}
+
+.hero-sub {
+  max-width: 30ch;
+  font: 500 clamp(18px, 2vw, 22px) / 1.4 var(--f-corpo);
+  text-wrap: pretty;
+}
+
+.hero-cta {
+  position: relative;
+  padding-bottom: 10px;
+  font: 700 18px var(--f-corpo);
+  text-decoration: none;
+}
+
+.hero-cta svg {
+  position: absolute;
+  left: -4px;
+  bottom: 0;
+  width: calc(100% + 8px);
+  height: 12px;
+  fill: none;
+  stroke: var(--rosa);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+
+.hero-cta:hover {
+  color: var(--verde);
+}
+
+/* arte: olho do MON + recortes de papel */
+.hero-arte {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1.05;
+}
+
+.recorte {
+  position: absolute;
+  box-shadow: 4px 6px 0 rgba(0, 0, 0, 0.12);
+}
+
+.recorte--rosa {
+  width: 92%;
+  aspect-ratio: 1.1;
+  background: var(--rosa);
+  clip-path: polygon(8% 4%, 38% 0, 71% 7%, 97% 2%, 100% 41%, 93% 78%, 98% 100%, 55% 94%, 18% 99%, 0 82%, 5% 47%, 0 18%);
+  transform: rotate(6deg);
+}
+
+.recorte--verde {
+  width: 34%;
+  aspect-ratio: 1;
+  left: -4%;
+  bottom: 2%;
+  background: var(--verde);
+  clip-path: polygon(14% 0, 100% 9%, 88% 62%, 96% 100%, 0 90%, 6% 40%);
+  transform: rotate(-11deg);
+}
+
+/* forma de olho: quadrado com cantos opostos em 100%, girado */
+.hero-olho {
+  position: relative;
+  width: 66%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 6px solid var(--preto);
+  border-radius: 100% 0;
+  transform: rotate(45deg);
+}
+
+.hero-olho img,
+.hero-olho .foto-vazia {
+  transform: rotate(-45deg) scale(1.45);
+}
+
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .hero-carimbo {
+    top: -34px;
+    left: auto;
+    right: 0;
+  }
+  .hero-arte {
+    max-width: 420px;
+    justify-self: center;
+  }
+  .hero-olho {
+    width: 56%;
+  }
+}

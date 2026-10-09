@@ -1,0 +1,25 @@
+.carimbo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 14px;
+  border: 3px double #c4122f;
+  outline: 2px solid #c4122f;
+  outline-offset: 3px;
+  color: #c4122f;
+  font: 700 13px/1.25 var(--f-maquina);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transform: rotate(-8deg);
+  /* tinta falhada */
+  mask-image: var(--grao), linear-gradient(#000, #000);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  mask-size: 120px, auto;
+  opacity: 0.88;
+}
+
+.carimbo span:first-child {
+  font-size: 1.5em;
+  letter-spacing: 0.08em;
+}

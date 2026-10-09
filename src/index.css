@@ -1,0 +1,92 @@
+:root {
+  --amarelo: #ffe14d;
+  --rosa: #ff4f8b;
+  --verde: #0a8f4e;
+  --preto: #1a1a1a;
+  --papel: #f6efdc;
+
+  --f-titulo: 'Bowlby One', 'Arial Black', sans-serif;
+  --f-corpo: 'Archivo', system-ui, sans-serif;
+  --f-letra: 'Libre Caslon Text', Georgia, serif;
+  --f-maquina: 'Courier Prime', 'Courier New', monospace;
+
+  --gutter: clamp(18px, 5vw, 64px);
+  --grao: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  margin: 0;
+  background: var(--amarelo);
+  color: var(--preto);
+  font: 400 17px/1.5 var(--f-corpo);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* grão de papel por cima de tudo, sem capturar cliques */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  background-image: var(--grao);
+  opacity: 0.18;
+  mix-blend-mode: multiply;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px dashed currentColor;
+  outline-offset: 4px;
+}
+
+.pagina {
+  overflow-x: hidden;
+}
+
+.secao {
+  padding: clamp(56px, 8vw, 112px) var(--gutter);
+}
+
+.titulo-secao {
+  font: clamp(38px, 6vw, 68px) / 0.95 var(--f-titulo);
+  text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

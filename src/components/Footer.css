@@ -1,0 +1,14 @@
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 28px;
+  padding: 22px var(--gutter);
+  background: var(--preto);
+  border-top: 2px dashed #444;
+  color: #ddd;
+  font: 400 14px var(--f-maquina);
+}
+
+.footer span:last-child {
+  margin-left: auto;
+}

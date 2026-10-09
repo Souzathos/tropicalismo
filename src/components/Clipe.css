@@ -1,0 +1,64 @@
+.clipe {
+  background: var(--verde);
+  color: #fff;
+}
+
+.clipe-inner {
+  display: grid;
+  gap: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.clipe-titulo {
+  color: var(--amarelo);
+  -webkit-text-stroke: 2px var(--preto);
+  paint-order: stroke fill;
+  transform: rotate(-2deg);
+  transform-origin: left;
+}
+
+/* moldura de TV de tubo */
+.tv {
+  padding: clamp(12px, 2.4vw, 28px);
+  background: #3a2a1c;
+  background-image: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0 2px, transparent 2px 7px);
+  border: 4px solid var(--preto);
+  border-radius: 28px;
+  box-shadow: 10px 10px 0 var(--preto);
+}
+
+.tv-tela {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 18px / 26px;
+  background: #000;
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.8);
+}
+
+.tv-tela iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.tv-vazia {
+  height: 100%;
+  background: #2a2a2a;
+}
+
+.clipe-texto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  align-items: start;
+  gap: 24px 48px;
+}
+
+.clipe-texto p {
+  font: 500 clamp(17px, 1.8vw, 20px) / 1.55 var(--f-corpo);
+  text-wrap: pretty;
+}
+
+.clipe-texto .censura {
+  color: var(--amarelo);
+}

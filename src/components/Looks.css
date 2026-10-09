@@ -1,0 +1,115 @@
+.looks-inner {
+  display: grid;
+  gap: clamp(28px, 4vw, 48px);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.looks-epoca {
+  display: inline-block;
+  margin-left: 0.2em;
+  color: var(--rosa);
+  -webkit-text-stroke: 1.5px var(--preto);
+  transform: rotate(3deg);
+}
+
+.varal {
+  position: relative;
+}
+
+.varal-fio {
+  position: absolute;
+  inset: 0 -6vw auto;
+  width: calc(100% + 12vw);
+  height: 80px;
+  fill: none;
+  stroke: var(--preto);
+  stroke-width: 2;
+  vector-effect: non-scaling-stroke;
+}
+
+.varal-pecas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 4vw, 48px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* cada peça acompanha a curva do fio */
+.peca {
+  position: relative;
+  padding: 10px 10px 0;
+  background: #fff;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+  transform-origin: top center;
+  transition: transform 0.4s ease;
+}
+
+.peca:nth-child(1) {
+  margin-top: 32px;
+  transform: rotate(-3deg);
+}
+
+.peca:nth-child(2) {
+  margin-top: 54px;
+  transform: rotate(1.5deg);
+}
+
+.peca:nth-child(3) {
+  margin-top: 28px;
+  transform: rotate(4deg);
+}
+
+.peca:hover {
+  transform: rotate(0);
+}
+
+.prendedor {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  width: 14px;
+  height: 40px;
+  margin-left: -7px;
+  background: linear-gradient(90deg, #c69a5b 0 46%, #8a6332 46% 54%, #c69a5b 54%);
+  border-radius: 3px;
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.peca-foto {
+  aspect-ratio: 3 / 4;
+}
+
+.peca-legenda {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  padding: 14px 4px 16px;
+}
+
+.peca-legenda b {
+  font: 700 17px var(--f-corpo);
+}
+
+.peca-legenda span {
+  font: 400 13px var(--f-maquina);
+  color: #555;
+}
+
+@media (max-width: 680px) {
+  .varal-fio {
+    display: none;
+  }
+  .varal-pecas {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 340px;
+    margin: 0 auto;
+    gap: 48px;
+  }
+  .peca:nth-child(n) {
+    margin-top: 0;
+  }
+}
